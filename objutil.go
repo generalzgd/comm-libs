@@ -171,6 +171,30 @@ func GetFunPointer(i interface{}) uintptr {
 	return 0
 }
 
+// 获取对象指针的地址
+func GetTarPointer(i interface{}) uintptr {
+	ref := reflect.ValueOf(i)
+	if ref.Kind() == reflect.Ptr {
+		// fmt.Println(runtime.FuncForPC(ref.Pointer()).Name(), ref.Pointer())
+		return ref.Pointer()
+	}
+	return 0
+}
+
+// 获取结构体名
+func GetStructName(instance interface{}) string {
+	value := reflect.ValueOf(instance)
+	if value.Type().Kind() == reflect.Ptr {
+		value = value.Elem()
+	}
+	str := value.Type().String()
+	arr := strings.Split(str, ".")
+	if len(arr) < 1 {
+		return ""
+	}
+	return arr[len(arr)-1]
+}
+
 func Map2KVPairs(data map[string]interface{}) []interface{} {
 	out := make([]interface{}, 0, len(data)*2)
 	for k, v := range data {
