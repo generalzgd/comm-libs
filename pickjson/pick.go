@@ -8,7 +8,7 @@
  * @file: pick.go
  * @time: 2019/9/25 18:21
  */
-package json
+package pickjson
 
 var (
 	startSymble = map[byte]struct{}{
