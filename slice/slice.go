@@ -44,7 +44,7 @@ func IsAllSameUint64(in []uint64) bool {
 }
 
 // 检测每个元素都是唯一的
-func IsEveryUniqueUint16(in []uint32) bool {
+func IsEveryUniqueUint16(in []uint16) bool {
 	l := len(in)
 	for i:=0; i<l; i++ {
 		for j:=0; j<l; j++ {
@@ -59,3 +59,32 @@ func IsEveryUniqueUint16(in []uint32) bool {
 	return true
 }
 
+func IsEveryUniqueUint(in []uint) bool {
+	l := len(in)
+	for i:=0; i<l; i++ {
+		for j:=0; j<l; j++ {
+			if j == i {
+				continue
+			}
+			if in[j] == in[i] {
+				return false
+			}
+		}
+	}
+	return true
+}
+
+func IsEveryUniqueInt(in []int) bool {
+	l := len(in)
+	for i:=0; i<l; i++ {
+		for j:=0; j<l; j++ {
+			if j == i {
+				continue
+			}
+			if in[j] == in[i] {
+				return false
+			}
+		}
+	}
+	return true
+}
