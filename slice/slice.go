@@ -12,6 +12,7 @@
 
 package slice
 
+// 是否所有元素都相同
 func IsAllSameStr(in []string) bool {
 	l := len(in)
 	for i:= 1;i<l;i++{
@@ -41,3 +42,20 @@ func IsAllSameUint64(in []uint64) bool {
 	}
 	return true
 }
+
+// 检测每个元素都是唯一的
+func IsEveryUniqueUint16(in []uint32) bool {
+	l := len(in)
+	for i:=0; i<l; i++ {
+		for j:=0; j<l; j++ {
+			if j == i {
+				continue
+			}
+			if in[j] == in[i] {
+				return false
+			}
+		}
+	}
+	return true
+}
+
