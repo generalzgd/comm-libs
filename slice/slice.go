@@ -12,6 +12,10 @@
 
 package slice
 
+import (
+	`math`
+)
+
 // 是否所有元素都相同
 func IsAllSameStr(in []string) bool {
 	l := len(in)
@@ -88,3 +92,64 @@ func IsEveryUniqueInt(in []int) bool {
 	}
 	return true
 }
+
+func MaxUint64(in []uint64) uint64 {
+	max := uint64(0)
+	for _, it := range in {
+		if it > max {
+			max = it
+		}
+	}
+	return max
+}
+
+func MinUint64(in []uint64) uint64 {
+	min := uint64(math.MaxUint64)
+	for _, it := range in {
+		if it < min {
+			min = it
+		}
+	}
+	return min
+}
+
+func MaxUint32(in []uint32) uint32 {
+	max := uint32(0)
+	for _, it := range in {
+		if it > max {
+			max = it
+		}
+	}
+	return max
+}
+
+func MinUint32(in []uint32) uint32 {
+	min := uint32(math.MaxInt32)
+	for _, it := range in {
+		if it < min {
+			min = it
+		}
+	}
+	return min
+}
+
+func MaxInt(in []int) int {
+	max := int(0)
+	for _, it := range in {
+		if it > max {
+			max = it
+		}
+	}
+	return max
+}
+
+func MinInt(in []int) int {
+	min := int(math.MaxInt64)
+	for _, it := range in {
+		if it < min {
+			min = it
+		}
+	}
+	return min
+}
+
