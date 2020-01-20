@@ -18,11 +18,11 @@ import (
 	`strings`
 )
 
-func FmtMem(num int) string {
+func FmtMem(num uint64) string {
 	unit := []string{"T", "G", "M", "K", "B"}
 	out := make([]string, 0, 5)
 	for i := 0; i < len(unit); i++ {
-		base := int(math.Pow(1024, float64(4-i)))
+		base := uint64(math.Pow(1024, float64(4-i)))
 		val := num / base
 		num = num - val*base
 		if val > 0 {

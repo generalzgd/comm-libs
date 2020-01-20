@@ -19,7 +19,7 @@ import (
 
 func Test_FmtMem(t *testing.T) {
 	type args struct {
-		num int
+		num uint64
 	}
 	tests := []struct {
 		name string
@@ -39,22 +39,22 @@ func Test_FmtMem(t *testing.T) {
 		},
 		{
 			name:"Test_fmtMem_3",
-			args:args{num:int(math.Pow(1024, 1))+1},
+			args:args{num:uint64(math.Pow(1024, 1))+1},
 			want:"1K1B",
 		},
 		{
 			name:"Test_fmtMem_4",
-			args:args{num:int(math.Pow(1024, 2))+1024+1},
+			args:args{num:uint64(math.Pow(1024, 2))+1024+1},
 			want:"1M1K1B",
 		},
 		{
 			name:"Test_fmtMem_5",
-			args:args{num:int(math.Pow(1024, 3))+int(math.Pow(1024,2))+1024+1},
+			args:args{num:uint64(math.Pow(1024, 3))+uint64(math.Pow(1024,2))+1024+1},
 			want:"1G1M1K1B",
 		},
 		{
 			name:"Test_fmtMem_6",
-			args:args{num:int(math.Pow(1024, 4))},
+			args:args{num:uint64(math.Pow(1024, 4))},
 			want:"1T",
 		},
 	}
