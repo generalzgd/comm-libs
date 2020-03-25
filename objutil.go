@@ -163,6 +163,10 @@ func GetFieldValueFromTarget(field string, tar interface{}) interface{} {
 
 // 获取函数的地址
 func GetFunPointer(i interface{}) uintptr {
+	if i == nil {
+		return 0
+	}
+
 	ref := reflect.ValueOf(i)
 	if ref.Kind() == reflect.Func {
 		// fmt.Println(runtime.FuncForPC(ref.Pointer()).Name(), ref.Pointer())
@@ -173,6 +177,9 @@ func GetFunPointer(i interface{}) uintptr {
 
 // 获取对象指针的地址
 func GetTarPointer(i interface{}) uintptr {
+	if i == nil {
+		return 0
+	}
 	ref := reflect.ValueOf(i)
 	if ref.Kind() == reflect.Ptr {
 		// fmt.Println(runtime.FuncForPC(ref.Pointer()).Name(), ref.Pointer())
@@ -183,6 +190,10 @@ func GetTarPointer(i interface{}) uintptr {
 
 // 获取结构体名
 func GetStructName(instance interface{}) string {
+	if instance == nil {
+		return ""
+	}
+
 	value := reflect.ValueOf(instance)
 	if value.Type().Kind() == reflect.Ptr {
 		value = value.Elem()
