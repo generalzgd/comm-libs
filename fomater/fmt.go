@@ -18,6 +18,7 @@ import (
 	`strings`
 )
 
+// 格式化内存表达式
 func FmtMem(num uint64) string {
 	unit := []string{"T", "G", "M", "K", "B"}
 	out := make([]string, 0, 5)
