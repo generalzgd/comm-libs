@@ -25,14 +25,13 @@ replace (
 )
 
 require (
-	github.com/astaxie/beego v1.12.1
+	github.com/astaxie/beego v1.12.2
 	github.com/bitly/go-simplejson v0.5.0
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/garyburd/redigo v1.6.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/go-xorm/xorm v0.7.9
 	github.com/hashicorp/consul/api v1.4.0
-	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	gopkg.in/yaml.v2 v2.2.8
 	xorm.io/core v0.7.3
 )
